@@ -1,0 +1,75 @@
+*****************
+**** LEIA-ME ****
+*****************
+***********************************************************
+1 - Criando um banco de dados na nuvem (para estudo)
+***********************************************************
+- Faça o login no Serviço de banco de dados MongoAtlas
+- Crie uma organização
+- Crie um projeto 
+- Crie uma database
+- Selecione o modo free do cluster
+- Crie um usuário e senha para este propósito, no modo local
+- Habilite o acesso à base por meio da rede. Inclua o ip origem ou adicione 0.0.0.0/0 para aceitar todos os acessos externos
+- Localize e copie os dados atuais da String de conexaão em driver/conection string
+Observação: inclua ou altere o nome da base de dados (criada acima) na string de conexão: <NomeDataBase>
+
+"mongodb+srv://<USER>:<PASSWORD>@cluster0.1wqorq2.mongodb.net/<NomeDataBase>?retryWrites=true&w=majority"
+
+- Se preferir, já adicione um registro no MongoDB para realizar o teste de acesso.
+- Instale a biblioteca mongodb no NodeJS como uma das dependências (passo 2)
+
+***********************************************************
+2 - Habilitando este projeto de estudo no seu ambiente
+***********************************************************
+
+a) Identifique a versão do NODE.JS 
+node --version 
+node -v
+
+b) Se não estiver instalado, instale a versão v18.16.0. A mesma que originou este projeto de estudo
+https://nodejs.org/en/blog/release/v18.16.0
+
+c) Se já estiver instalado, instale as demais dependências (Frameworks e Runtime):
+Execute na console/terminal do VSCode
+
+********NodeMon**********
+npm install nodemon@3.0.1 
+
+***Framework Express para trabalhar com os métodos HTTP****
+npm install express@4.18.1
+
+****Driver de conexão com a entidade de banco de dados*****
+npm install mongodb
+
+****Biblioteca de conexão NodeJs com a estrutura/schema dos dados****
+npm install mongoose@7.3.4
+
+****Biblioteca para utilizar JWT******
+npm install jsonwebtoken
+
+****Biblioteca para variáveis de ambiente******
+npm install dotenv --save
+
+
+d) Para carregar o projeto: 
+Verifique se os arquivos possuem permissão de execução
+
+e) Execute então o comando na console/terminal do VSCode
+npm run dev
+
+f) Se preferir, utilize o Postman para testar o acesso à porta "2023"
+
+*** Exemplo do terminal com o NodeJS habilitado***
+PS C:\api> npm run dev
+
+> microservice@1.0.0 dev
+> nodemon server.js     
+
+[nodemon] 3.0.1
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node server.js`
+Wed Dec 06 2023 21:45:51 GMT-0300 (Horário Padrão de Brasília)[INFO] API está escutando na porta: 2023
+Wed Dec 06 2023 21:45:51 GMT-0300 (Horário Padrão de Brasília)[INFO] Conexão com banco de dados feita com sucesso!
